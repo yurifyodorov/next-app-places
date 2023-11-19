@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import dynamic from "next/dynamic";
 
 import useRentModal from '@/app/hooks/useRentModal';
 import { categories } from "@/app/components/navbar/Categories";
@@ -10,7 +11,8 @@ import Modal from "./Modal";
 import Heading from "@/app/components/Heading";
 import CategoryInput from "@/app/components/inputs/CategoryInput";
 import CountrySelect from "@/app/components/inputs/CountrySelect";
-import dynamic from "next/dynamic";
+import Counter from "@/app/components/inputs/Counter";
+import ImageUpload from "@/app/components/inputs/ImageUpload";
 
 enum STEPS {
   CATEGORY = 0,
@@ -138,6 +140,52 @@ const RentModal = () => {
         <Map center={location?.latlng} />
       </div>
     );
+  }
+
+  if (step === STEPS.INFO) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Share some basics about your place"
+          subtitle="What amenitis do you have?"
+        />
+        <Counter
+          onChange={(value) => setCustomValue('guestCount', value)}
+          value={guestCount}
+          title="Guests"
+          subtitle="How many guests do you allow?"
+        />
+        <hr />
+        <Counter
+          onChange={(value) => setCustomValue('roomCount', value)}
+          value={roomCount}
+          title="Rooms"
+          subtitle="How many rooms do you have?"
+        />
+        <hr />
+        <Counter
+          onChange={(value) => setCustomValue('bathroomCount', value)}
+          value={bathroomCount}
+          title="Bathrooms"
+          subtitle="How many bathrooms do you have?"
+        />
+      </div>
+    )
+  }
+
+  if (step === STEPS.IMAGES) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Add a photo of your place"
+          subtitle="Show guests what your place looks like!"
+        />
+        <ImageUpload
+          onChange={(value) => setCustomValue('imageSrc', value)}
+          value={imageSrc}
+        />
+      </div>
+    )
   }
 
   return (
