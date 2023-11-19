@@ -7,8 +7,8 @@ const Logo = () => {
     <Image
       alt="Logo"
       className="hidden md:block cursor-pointer"
-      height="64"
-      width="64"
+      height="40"
+      width="40"
       src="/images/world.png"
       priority={true}
     />

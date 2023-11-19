@@ -14,6 +14,7 @@ import Modal from "@/app/components/modals/Modal";
 import Heading from "@/app/components/Heading";
 import Input from "@/app/components/inputs/Input";
 import Button from "@/app/components/Button";
+import { signIn } from "next-auth/react";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
@@ -102,7 +103,7 @@ const RegisterModal = () => {
         outline
         label="Continue with Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => signIn('github')}
       />
       <div
         className="

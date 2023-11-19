@@ -10,6 +10,7 @@ import Avatar from "../Avatart";
 
 import useLoginModal from "@/app/hooks/useLoginModal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
+
 import { SafeUser } from "@/app/types";
 
 interface UserMenuProps {
@@ -68,7 +69,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
         >
           <AiOutlineMenu />
           <div className="hidden md:block">
-            <Avatar />
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
       </div>
