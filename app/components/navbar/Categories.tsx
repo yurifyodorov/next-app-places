@@ -28,21 +28,6 @@ export const categories = [
     description: 'This places is close to the beach!',
   },
   {
-    label: 'Windmills',
-    icon: GiWindmill,
-    description: 'This places is has windmills!',
-  },
-  {
-    label: 'Modern',
-    icon: MdOutlineVilla,
-    description: 'This places is modern!'
-  },
-  {
-    label: 'Countryside',
-    icon: TbMountain,
-    description: 'This places is in the countryside!'
-  },
-  {
     label: 'Pools',
     icon: TbPool,
     description: 'This places has a beautiful pool!'
@@ -56,11 +41,6 @@ export const categories = [
     label: 'Lake',
     icon: GiBoatFishing,
     description: 'This places is near a lake!'
-  },
-  {
-    label: 'Skiing',
-    icon: FaSkiing,
-    description: 'This places has skiing activies!'
   },
   {
     label: 'Castles',
@@ -78,24 +58,9 @@ export const categories = [
     description: 'This places offers camping activities!'
   },
   {
-    label: 'Arctic',
-    icon: BsSnow,
-    description: 'This places is in arctic environment!'
-  },
-  {
     label: 'Desert',
     icon: GiCactus,
     description: 'This places is in the desert!'
-  },
-  {
-    label: 'Barns',
-    icon: GiBarn,
-    description: 'This places is in a barn!'
-  },
-  {
-    label: 'Lux',
-    icon: IoDiamond,
-    description: 'This places is brand new and luxurious!'
   }
 ]
 
@@ -117,7 +82,7 @@ const Categories = () => {
           flex
           flex-row
           items-center
-          justify-between
+          justify-start
           overflow-x-auto
         "
       >
