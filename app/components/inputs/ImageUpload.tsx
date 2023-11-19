@@ -1,21 +1,21 @@
 'use client';
 
 import React, { useCallback } from "react";
-import { CldUploadWidget } from "next-cloudinary";
-import Image from "next/image";
+import { CldImage, CldUploadWidget } from "next-cloudinary";
 import { TbPhotoPlus } from 'react-icons/tb'
 
 declare global {
   let cloudinary: any;
 }
 
-const uploadPreset = "pgc9ehd5";
+const uploadPreset = "s00i7c3u";
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
   value: string;
 }
 
+// FIXME: issue here -> Stop using deprecated @cld/icons. Use @clds/icon instead.
 const ImageUpload: React.FC<ImageUploadProps> = ({
     onChange,
     value
@@ -60,9 +60,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               Click to upload
             </div>
             {value && (
-              <div className="
-              absolute inset-0 w-full h-full">
-                <Image
+              <div className="absolute inset-0 w-full h-full">
+                <CldImage
                   fill
                   style={{ objectFit: 'cover' }}
                   src={value}
