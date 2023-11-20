@@ -4,7 +4,6 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import { TbBeach } from 'react-icons/tb';
 import { GiWaterfall } from "react-icons/gi";
 import {
-  GiBarn,
   GiBoatFishing,
   GiCactus,
   GiCastle,
