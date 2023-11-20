@@ -1,7 +1,8 @@
 'use client';
 
 import { usePathname, useSearchParams } from 'next/navigation';
-import { TbBeach, TbPool } from 'react-icons/tb';
+import { TbBeach } from 'react-icons/tb';
+import { GiWaterfall } from "react-icons/gi";
 import {
   GiBarn,
   GiBoatFishing,
@@ -23,9 +24,9 @@ export const categories = [
     description: 'This places is close to the beach!',
   },
   {
-    label: 'Pools',
-    icon: TbPool,
-    description: 'This places has a beautiful pool!'
+    label: 'Waterfall',
+    icon: GiWaterfall,
+    description: 'This places has a waterfall!'
   },
   {
     label: 'Islands',
