@@ -10,7 +10,6 @@ import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 
 import HeartButton from "../HeartButton";
 import Button from "../Button";
-import ClientOnly from "../ClientOnly";
 
 interface ListingCardProps {
   data: SafeListing;
@@ -20,7 +19,7 @@ interface ListingCardProps {
   actionLabel?: string;
   actionId?: string;
   currentUser?: SafeUser | null
-};
+}
 
 const ListingCard: React.FC<ListingCardProps> = ({
     data,
@@ -98,31 +97,26 @@ const ListingCard: React.FC<ListingCardProps> = ({
             top-3
             right-3
           ">
-            <HeartButton />
+            <HeartButton
+              listingId={data.id}
+              currentUser={currentUser}
+            />
           </div>
         </div>
         <div className="font-semibold text-lg pt-2">
-          {data.title}
-        </div>
-        <small className="font-light text-neutral-500">
           {location?.region}, {location?.label}
-        </small>
-
-        {/* category */}
-        {/*<div className="font-light text-neutral-500">*/}
-        {/*  {reservationDate || data.category}*/}
-        {/*</div>*/}
-
-        {/* price */}
-        {/*<div className="flex flex-row items-center gap-1">*/}
-        {/*  <div className="font-semibold">*/}
-        {/*    $ {price}*/}
-        {/*  </div>*/}
-        {/*  {!reservation && (*/}
-        {/*    <div className="font-light">night</div>*/}
-        {/*  )}*/}
-        {/*</div>*/}
-
+        </div>
+        <div className="font-light text-neutral-500">
+          {reservationDate || data.category}
+        </div>
+        <div className="flex flex-row items-center gap-1">
+          <div className="font-semibold">
+            $ {price}
+          </div>
+          {!reservation && (
+            <div className="font-light">night</div>
+          )}
+        </div>
         {onAction && actionLabel && (
           <Button
             disabled={disabled}
