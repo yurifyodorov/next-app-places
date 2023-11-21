@@ -82,6 +82,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
         >
           <Image
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="
               object-cover
               h-full
@@ -90,7 +91,8 @@ const ListingCard: React.FC<ListingCardProps> = ({
               transition
             "
             src={data.imageSrc}
-            alt="Listing"
+            alt={data.title}
+            priority={true}
           />
           <div className="
             absolute
