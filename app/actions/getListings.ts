@@ -89,6 +89,8 @@ export default async function getListings(
       createdAt: listing.createdAt.toISOString(),
     }));
   } catch (error: any) {
+    // FIXME: ошибка если запустить сайт без VPN
+    // MongoDB Atlas Database - не работает без VPN
     throw new Error(error);
   }
 }
