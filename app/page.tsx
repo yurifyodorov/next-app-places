@@ -6,11 +6,23 @@ import getListings, { IListingsParams } from "@/app/actions/getListings";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import ClientOnly from "./components/ClientOnly";
 
+import { cookies } from 'next/headers'
+
+async function getCookieData() {
+  const cookieData = cookies().getAll()
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(cookieData)
+    }, 1000)
+  )
+}
+
 interface HomeProps {
   searchParams: IListingsParams
-};
+}
 
 const Home = async ({ searchParams }: HomeProps) => {
+  await getCookieData()
   const listings = await getListings(searchParams);
   const currentUser = await getCurrentUser();
 
