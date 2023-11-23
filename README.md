@@ -37,6 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## DB Push
 
-Run to push changes in database
-
 `npx prisma db push`
