@@ -8,6 +8,7 @@ body,
   height: 100%;
 }
 
+/* Map */
 .leaflet-bottom,
 .leaflet-control,
 .leaflet-pane,
@@ -15,6 +16,18 @@ body,
   z-index: 0 !important;
 }
 
+
+/* Calendar */
+.rdrMonth {
+  width: 100% !important;
+}
+
+.rdrCalendarWrapper {
+  font-size: 16px !important;
+  width: 100% !important;
+}
+
+/* Scrollbar */
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
