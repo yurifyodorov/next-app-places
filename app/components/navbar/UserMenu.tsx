@@ -120,7 +120,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                   onClick={() => router.push('/properties')}
                 />
                 <MenuItem
-                  label="My home"
+                  label="Add new location"
                   onClick={rentModal.onOpen}
                 />
                 <hr />

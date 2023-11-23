@@ -274,7 +274,7 @@ const RentModal = () => {
       actionLabel={actionLabel}
       secondaryActionLabel={secondaryActionLabel}
       secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
-      title="Your home!"
+      title="Adding a new location"
       body={bodyContent}
     />
   );
